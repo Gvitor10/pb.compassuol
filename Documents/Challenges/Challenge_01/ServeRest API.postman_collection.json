@@ -1,0 +1,440 @@
+{
+	"info": {
+		"_postman_id": "a5e87a82-2bf1-4f88-bb59-88a42c8b61f0",
+		"name": "ServeRest API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "40096940",
+		"_collection_link": "https://bit-masters.postman.co/workspace/Minhas-API's~71b1a37e-c26a-48f0-929e-0093f6d76a80/collection/40096940-a5e87a82-2bf1-4f88-bb59-88a42c8b61f0?action=share&source=collection_link&creator=40096940"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"item": [
+				{
+					"name": "Realizar login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"usuario@gmail.com\",\r\n    \"password\": \"Senha\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/login",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "**Autentique o seu usuário para montar um carrinho e, se for administrador, gerenciar os produtos.**"
+		},
+		{
+			"name": "Usuarios",
+			"item": [
+				{
+					"name": "Listar usuarios cadastrados",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/usuarios",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"usuarios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cadastrar usuario",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Usuario\",\r\n    \"email\": \"usuario@gmail.com\",\r\n    \"password\": \"Senha\",\r\n    \"administrador\": \"true\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/usuarios",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"usuarios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar usuario por ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/usuarios/0uxuPY0cbmQhpEz1",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"usuarios",
+								"0uxuPY0cbmQhpEz1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Excluir usuario",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/usuarios/0uxuPY0cbmQhpEz1",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"usuarios",
+								"0uxuPY0cbmQhpEz1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Editar usuario",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"nome\": \"Fulano da Silva\",\r\n  \"email\": \"beltrano@qa.com.br\",\r\n  \"password\": \"teste\",\r\n  \"administrador\": \"true\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/usuarios/0uxuPY0cbmQhpEz1",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"usuarios",
+								"0uxuPY0cbmQhpEz1"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "**Gerencie os usuários, consulte dados para login e cadastre administrador.**"
+		},
+		{
+			"name": "Produtos",
+			"item": [
+				{
+					"name": "Listar produtos cadastrados",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/produtos",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"produtos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cadastrar produto",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{API_KEY}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"nome\": \"Meu produto\",\r\n  \"preco\": 9999999999999,\r\n  \"descricao\": \"Um simples produto de teste\",\r\n  \"quantidade\": 99999999\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/produtos",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"produtos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar produto por ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/produtos/BeeJh5lz3k6kSIzA",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"produtos",
+								"BeeJh5lz3k6kSIzA"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Excluir produto",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{API_KEY}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/produtos/BeeJh5lz3k6kSIzA",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"produtos",
+								"BeeJh5lz3k6kSIzA"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Editar produto",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{API_KEY}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"nome\": \"Logitech MX Vertical\",\r\n  \"preco\": 470,\r\n  \"descricao\": \"Mouse\",\r\n  \"quantidade\": 381\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/produtos/BeeJh5lz3k6kSIzA",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"produtos",
+								"BeeJh5lz3k6kSIzA"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "**Consulte produtos cadastrados ou, como administrador, gerencie os produtos da loja.**"
+		},
+		{
+			"name": "Carrinhos",
+			"item": [
+				{
+					"name": "Listar carrinhos cadastrados",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/carrinhos",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"carrinhos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cadastrar carrinho",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{API_KEY}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"produtos\": [\r\n    {\r\n      \"idProduto\": \"BeeJh5lz3k6kSIzA\",\r\n      \"quantidade\": 1\r\n    },\r\n    {\r\n      \"idProduto\": \"YaeJ455lz3k6kSIzA\",\r\n      \"quantidade\": 3\r\n    }\r\n  ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/carrinhos",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"carrinhos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar carrinho por ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{API_KEY}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}}/carrinhos/",
+							"host": [
+								"{{URL}}}"
+							],
+							"path": [
+								"carrinhos",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Excluir carrinho",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{API_KEY}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/carrinhos/concluir-compra",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"carrinhos",
+								"concluir-compra"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Excluir carrinho e retornar produtos para estoque",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{API_KEY}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/carrinhos/cancelar-compra",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"carrinhos",
+								"cancelar-compra"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "**Consulte os carrinhos cadastrados, faça um para o seu usuário e, no final, desista da compra pois estava só dando uma olhadinha.**"
+		}
+	]
+}
