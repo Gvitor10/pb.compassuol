@@ -1,0 +1,32 @@
+[PASSO A PASSO PARA SUBIR UMA MÁQUINA VIRTUAL EC2 (ELASTIC COMPUTE CLOUD) NA AMAZON]
+
+Venho por meio deste documento, trazer um rápido passo a passo sobre como subir uma EC2 - Amazon, juntamente
+com um breve relato da minha experiência ao realizar essa atividade no PB.
+
+Durante meus estudos e práticas com a AWS, realizei a criação de uma instância EC2, um serviço de computação em 
+nuvem que permite rodar servidores virtuais. O processo envolveu as seguintes etapas principais:
+
+- Escolha da AMI (Amazon Machine Image): 
+Eu optei pela imagem padrão do Amazon Linux.
+
+- Seleção do tipo de instância: 
+Usei a instância t2.micro do free tier.
+
+- Configuração da rede e segurança: 
+Criei um par de chaves para acesso SSH e configurei o grupo de segurança.
+
+- Inicialização e acesso: 
+Após subir a máquina, eu me conectei-me via terminal usando o comando SSH, validando o acesso 
+à máquina virtual.
+
+Essa experiência me proporcionou um entendimento prático de como funciona o provisionamento de servidores na nuvem, 
+reforçando conceitos como segurança, escalabilidade e gerenciamento de recursos.
+
+- PASSO A PASSO -
+
+[ ] CRIAR KEYPARS;
+[ ] CONFIGURAR INTERNET GATEWAY;
+[ ] ASSOCIAR GATEWAY A VPC;
+[ ] ASSOCIAR GATEWAY A TABELA DE ROTAS;
+[ ] CRIAR INSTÂNCIA (HTTP, HTTPS, PERSONALIZADO E IP PÚBLICO);
+[ ] CONECTAR A INSTÂNCIA;
