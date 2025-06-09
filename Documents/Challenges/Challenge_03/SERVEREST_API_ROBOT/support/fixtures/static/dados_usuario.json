@@ -1,0 +1,26 @@
+{
+    "usuario_valido": {
+        "nome": "Michael Jordam",
+        "email": "Maicao@qa.com",
+        "password": "Jordam123",
+        "administrador": "true"
+    },
+    "usuario_invalido": {
+        "nome": "Ronaldinho Gaucho",
+        "email": "Ronaldinho@qa.com",
+        "password": "Ronaldinho123",
+        "administrador": "true"
+    },
+    "usuario_sem_senha": {
+        "nome": "Lewis Hamillton",
+        "email": "LuisAmilton@qa.com",
+        "password": "",
+        "administrador": "true"
+    },
+    "usuario_sem_email": {
+        "nome": "Elon Musk",
+        "email": "",
+        "password": "DonaldTrump",
+        "administrador": "true"
+    }
+}
